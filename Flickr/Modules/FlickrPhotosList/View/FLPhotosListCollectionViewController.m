@@ -12,6 +12,8 @@
 
 static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
 static NSUInteger const numberOfColumns = 3;
+static CGFloat const SearchBarHeight = 44.0;
+static CGFloat const SpaceBetweenTwoPhotos = 10.0;
 
 @interface FLPhotosListCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UIScrollViewDelegate>
 
@@ -32,7 +34,10 @@ static NSUInteger const numberOfColumns = 3;
 }
 
 - (void)setupCollectionView {
-  self.sectionInsets = UIEdgeInsetsMake(60, 10, 10, 10);
+  self.sectionInsets = UIEdgeInsetsMake(SearchBarHeight + SpaceBetweenTwoPhotos,
+                                        SpaceBetweenTwoPhotos,
+                                        SpaceBetweenTwoPhotos,
+                                        SpaceBetweenTwoPhotos);
   UINib *nib = [UINib nibWithNibName:NSStringFromClass([FLImageCollectionViewCell class]) bundle:[NSBundle mainBundle]];
   [self.collectionView registerNib:nib forCellWithReuseIdentifier:reuseIdentifier];
   self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -55,7 +60,10 @@ static NSUInteger const numberOfColumns = 3;
 }
 
 - (void)viewWillLayoutSubviews {
-  self.searchBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.collectionView.frame), 44);
+  self.searchBar.frame = CGRectMake(0,
+                                    0,
+                                    CGRectGetWidth(self.collectionView.frame),
+                                    SearchBarHeight);
 }
 
 - (void)showPhotos {
