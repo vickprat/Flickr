@@ -48,7 +48,7 @@ static NSUInteger const numberOfColumns = 3;
 - (void)setupLoadingSpinner {
   self.loadingSpinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
   self.loadingSpinner.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
-  self.loadingSpinner.center = self.view.center;
+  self.loadingSpinner.center = self.collectionView.center;
   [self.collectionView addSubview:self.loadingSpinner];
   [self.loadingSpinner bringSubviewToFront:self.collectionView];
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
