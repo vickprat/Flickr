@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface FlickrPhoto : NSObject
 
 - (instancetype)initWithID:(NSString *)ID
@@ -21,3 +23,5 @@
 @property (nonatomic, readonly) NSString *secret;
 
 @end
+
+NS_ASSUME_NONNULL_END
