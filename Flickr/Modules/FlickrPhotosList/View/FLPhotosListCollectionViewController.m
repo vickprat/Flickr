@@ -85,8 +85,10 @@ static NSUInteger const numberOfColumns = 3;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   FLImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-  cell.flickrImageView.image = [self.output imageForRow:indexPath.row];
-  if ([self.output imageForRow:indexPath.row] == nil) {
+  UIImage *image = [self.output imageForRow:indexPath.row];
+  if (image != nil) {
+    cell.flickrImageView.image = image;
+  } else {
     [[[NSURLSession sharedSession] downloadTaskWithURL:[self.output photoURLForRow:indexPath.row]
                                      completionHandler:^(NSURL *location,
                                                          NSURLResponse *response,
@@ -96,13 +98,12 @@ static NSUInteger const numberOfColumns = 3;
                                          UIImage *image = [UIImage imageWithData:data];
                                          if (image) {
                                            dispatch_async(dispatch_get_main_queue(), ^{
-                                             [self.output cacheImage:image forRow:indexPath.row];
                                              FLImageCollectionViewCell *cell = (FLImageCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-                                             if (cell)
+                                             if (cell) {
                                                cell.flickrImageView.image = image;
+                                             }
+                                             [self.output cacheImage:image forRow:indexPath.row];
                                            });
-                                         } else {
-                                           NSLog(@"Corrupted data: %@", data);
                                          }
                                        } else {
                                          NSLog(@"Error in downloading the photo: %@", error);
