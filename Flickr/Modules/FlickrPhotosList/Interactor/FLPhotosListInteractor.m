@@ -19,17 +19,20 @@
   [service fetchPhotosWithSearchString:searchString
                             pageNumber:pageNumber
                        completionBlock:^(NSDictionary *imageData) {
-                         NSDictionary *photosDict = imageData[@"photos"];
+                         NSDictionary *photosDictionary = imageData[@"photos"];
                          NSMutableArray *photos = [[NSMutableArray alloc] init];
-                         for (NSDictionary *photo in photosDict[@"photo"]) {
-                           FlickrPhoto *flickrPhoto = [[FlickrPhoto alloc] initWithID:photo[@"id"]
-                                                                               server:photo[@"server"]
-                                                                                 farm:photo[@"farm"]
-                                                                               secret:photo[@"secret"]];
-                           [photos addObject:flickrPhoto];
+                         for (NSDictionary *photoDictionary in photosDictionary[@"photo"]) {
+                           [photos addObject:[self flickrPhotoFromPhotoDictionary:photoDictionary]];
                          }
                          [self.output fetchedPhotos:photos];
                        }];
+}
+
+- (FlickrPhoto *)flickrPhotoFromPhotoDictionary:(NSDictionary *)photoDictionary {
+  return [[FlickrPhoto alloc] initWithID:photoDictionary[@"id"]
+                                  server:photoDictionary[@"server"]
+                                    farm:photoDictionary[@"farm"]
+                                  secret:photoDictionary[@"secret"]];
 }
 
 - (NSURL *)downloadURLForFlickrPhoto:(FlickrPhoto *)flickrPhoto {
