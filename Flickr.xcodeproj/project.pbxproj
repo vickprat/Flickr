@@ -12,7 +12,7 @@
 		5422B03A20DD38D900DC56ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5422B03920DD38D900DC56ED /* Assets.xcassets */; };
 		5422B03D20DD38D900DC56ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5422B03B20DD38D900DC56ED /* LaunchScreen.storyboard */; };
 		5422B04020DD38D900DC56ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B03F20DD38D900DC56ED /* main.m */; };
-		5422B04A20DD38D900DC56ED /* FlickrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B04920DD38D900DC56ED /* FlickrTests.m */; };
+		5422B04A20DD38D900DC56ED /* FlickrPhotoNetworkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B04920DD38D900DC56ED /* FlickrPhotoNetworkServiceTests.m */; };
 		5422B05E20DE169600DC56ED /* RootRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B05D20DE169600DC56ED /* RootRouter.m */; };
 		5422B06820DE18A500DC56ED /* FLPhotosListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B06720DE18A500DC56ED /* FLPhotosListCollectionViewController.m */; };
 		5422B06C20DE196100DC56ED /* FLPhotosListBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B06B20DE196100DC56ED /* FLPhotosListBuilder.m */; };
@@ -44,7 +44,7 @@
 		5422B03E20DD38D900DC56ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5422B03F20DD38D900DC56ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5422B04520DD38D900DC56ED /* FlickrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5422B04920DD38D900DC56ED /* FlickrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrTests.m; sourceTree = "<group>"; };
+		5422B04920DD38D900DC56ED /* FlickrPhotoNetworkServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoNetworkServiceTests.m; sourceTree = "<group>"; };
 		5422B04B20DD38D900DC56ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5422B05C20DE169600DC56ED /* RootRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootRouter.h; sourceTree = "<group>"; };
 		5422B05D20DE169600DC56ED /* RootRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootRouter.m; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		5422B04820DD38D900DC56ED /* FlickrTests */ = {
 			isa = PBXGroup;
 			children = (
-				5422B04920DD38D900DC56ED /* FlickrTests.m */,
+				5422B04920DD38D900DC56ED /* FlickrPhotoNetworkServiceTests.m */,
 				5422B04B20DD38D900DC56ED /* Info.plist */,
 			);
 			path = FlickrTests;
@@ -349,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5422B04A20DD38D900DC56ED /* FlickrTests.m in Sources */,
+				5422B04A20DD38D900DC56ED /* FlickrPhotoNetworkServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
