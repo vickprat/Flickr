@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5422B03220DD38D900DC56ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B03120DD38D900DC56ED /* AppDelegate.m */; };
-		5422B03520DD38D900DC56ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B03420DD38D900DC56ED /* ViewController.m */; };
 		5422B03820DD38D900DC56ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5422B03620DD38D900DC56ED /* Main.storyboard */; };
 		5422B03A20DD38D900DC56ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5422B03920DD38D900DC56ED /* Assets.xcassets */; };
 		5422B03D20DD38D900DC56ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5422B03B20DD38D900DC56ED /* LaunchScreen.storyboard */; };
 		5422B04020DD38D900DC56ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B03F20DD38D900DC56ED /* main.m */; };
 		5422B04A20DD38D900DC56ED /* FlickrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B04920DD38D900DC56ED /* FlickrTests.m */; };
+		5422B05E20DE169600DC56ED /* RootRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B05D20DE169600DC56ED /* RootRouter.m */; };
+		5422B06820DE18A500DC56ED /* FLPhotosListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B06720DE18A500DC56ED /* FLPhotosListCollectionViewController.m */; };
+		5422B06C20DE196100DC56ED /* FLPhotosListBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5422B06B20DE196100DC56ED /* FLPhotosListBuilder.m */; };
+		5479DB1B20DE1F780044DF1B /* FLPhototsListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5479DB1A20DE1F780044DF1B /* FLPhototsListPresenter.m */; };
+		5479DB1E20DE1FA20044DF1B /* FLPhotosListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5479DB1D20DE1FA20044DF1B /* FLPhotosListInteractor.m */; };
+		5479DB2520DE34280044DF1B /* FLImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5479DB2320DE34280044DF1B /* FLImageCollectionViewCell.m */; };
+		5479DB2620DE34280044DF1B /* FLImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5479DB2420DE34280044DF1B /* FLImageCollectionViewCell.xib */; };
+		5479DB2920DE59E30044DF1B /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5479DB2820DE59E30044DF1B /* FlickrPhoto.m */; };
+		5479DB2E20DE5C610044DF1B /* FlickrPhotoNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5479DB2D20DE5C610044DF1B /* FlickrPhotoNetworkService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +38,6 @@
 		5422B02D20DD38D900DC56ED /* Flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5422B03020DD38D900DC56ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5422B03120DD38D900DC56ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5422B03320DD38D900DC56ED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5422B03420DD38D900DC56ED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5422B03720DD38D900DC56ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5422B03920DD38D900DC56ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5422B03C20DD38D900DC56ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +46,27 @@
 		5422B04520DD38D900DC56ED /* FlickrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5422B04920DD38D900DC56ED /* FlickrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrTests.m; sourceTree = "<group>"; };
 		5422B04B20DD38D900DC56ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5422B05C20DE169600DC56ED /* RootRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootRouter.h; sourceTree = "<group>"; };
+		5422B05D20DE169600DC56ED /* RootRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootRouter.m; sourceTree = "<group>"; };
+		5422B06620DE18A500DC56ED /* FLPhotosListCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListCollectionViewController.h; sourceTree = "<group>"; };
+		5422B06720DE18A500DC56ED /* FLPhotosListCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhotosListCollectionViewController.m; sourceTree = "<group>"; };
+		5422B06A20DE196100DC56ED /* FLPhotosListBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListBuilder.h; sourceTree = "<group>"; };
+		5422B06B20DE196100DC56ED /* FLPhotosListBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhotosListBuilder.m; sourceTree = "<group>"; };
+		5479DB1720DE1D4F0044DF1B /* FLPhotosListViewInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListViewInput.h; sourceTree = "<group>"; };
+		5479DB1820DE1D900044DF1B /* FLPhotosListViewOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListViewOutput.h; sourceTree = "<group>"; };
+		5479DB1920DE1F780044DF1B /* FLPhotosListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListPresenter.h; sourceTree = "<group>"; };
+		5479DB1A20DE1F780044DF1B /* FLPhototsListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhototsListPresenter.m; sourceTree = "<group>"; };
+		5479DB1C20DE1FA20044DF1B /* FLPhotosListInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListInteractor.h; sourceTree = "<group>"; };
+		5479DB1D20DE1FA20044DF1B /* FLPhotosListInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhotosListInteractor.m; sourceTree = "<group>"; };
+		5479DB1F20DE1FE70044DF1B /* FLPhotosListInteractorInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListInteractorInput.h; sourceTree = "<group>"; };
+		5479DB2020DE20010044DF1B /* FLPhotosListInteractorOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPhotosListInteractorOutput.h; sourceTree = "<group>"; };
+		5479DB2220DE34280044DF1B /* FLImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLImageCollectionViewCell.h; sourceTree = "<group>"; };
+		5479DB2320DE34280044DF1B /* FLImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLImageCollectionViewCell.m; sourceTree = "<group>"; };
+		5479DB2420DE34280044DF1B /* FLImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		5479DB2720DE59E30044DF1B /* FlickrPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		5479DB2820DE59E30044DF1B /* FlickrPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
+		5479DB2C20DE5C610044DF1B /* FlickrPhotoNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoNetworkService.h; sourceTree = "<group>"; };
+		5479DB2D20DE5C610044DF1B /* FlickrPhotoNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoNetworkService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +108,13 @@
 		5422B02F20DD38D900DC56ED /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				5479DB2B20DE5C2F0044DF1B /* NetworkService */,
+				5479DB2A20DE59EA0044DF1B /* Model */,
+				5422B05F20DE172A00DC56ED /* Modules */,
 				5422B03020DD38D900DC56ED /* AppDelegate.h */,
-				5422B03120DD38D900DC56ED /* AppDelegate.m */,
-				5422B03320DD38D900DC56ED /* ViewController.h */,
-				5422B03420DD38D900DC56ED /* ViewController.m */,
 				5422B03620DD38D900DC56ED /* Main.storyboard */,
 				5422B03920DD38D900DC56ED /* Assets.xcassets */,
+				5422B03120DD38D900DC56ED /* AppDelegate.m */,
 				5422B03B20DD38D900DC56ED /* LaunchScreen.storyboard */,
 				5422B03E20DD38D900DC56ED /* Info.plist */,
 				5422B03F20DD38D900DC56ED /* main.m */,
@@ -101,6 +129,104 @@
 				5422B04B20DD38D900DC56ED /* Info.plist */,
 			);
 			path = FlickrTests;
+			sourceTree = "<group>";
+		};
+		5422B05B20DE167B00DC56ED /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				5422B05C20DE169600DC56ED /* RootRouter.h */,
+				5422B05D20DE169600DC56ED /* RootRouter.m */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		5422B05F20DE172A00DC56ED /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5422B06020DE17B500DC56ED /* FlickrPhotosList */,
+				5422B05B20DE167B00DC56ED /* Root */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5422B06020DE17B500DC56ED /* FlickrPhotosList */ = {
+			isa = PBXGroup;
+			children = (
+				5422B06420DE183400DC56ED /* Interactor */,
+				5422B06320DE182E00DC56ED /* Presenter */,
+				5422B06220DE17FB00DC56ED /* View */,
+				5422B06120DE17F300DC56ED /* Builder */,
+			);
+			path = FlickrPhotosList;
+			sourceTree = "<group>";
+		};
+		5422B06120DE17F300DC56ED /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				5422B06A20DE196100DC56ED /* FLPhotosListBuilder.h */,
+				5422B06B20DE196100DC56ED /* FLPhotosListBuilder.m */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		5422B06220DE17FB00DC56ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5479DB2120DE33FC0044DF1B /* Cell */,
+				5479DB1720DE1D4F0044DF1B /* FLPhotosListViewInput.h */,
+				5479DB1820DE1D900044DF1B /* FLPhotosListViewOutput.h */,
+				5422B06620DE18A500DC56ED /* FLPhotosListCollectionViewController.h */,
+				5422B06720DE18A500DC56ED /* FLPhotosListCollectionViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5422B06320DE182E00DC56ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5479DB1920DE1F780044DF1B /* FLPhotosListPresenter.h */,
+				5479DB1A20DE1F780044DF1B /* FLPhototsListPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5422B06420DE183400DC56ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5479DB1F20DE1FE70044DF1B /* FLPhotosListInteractorInput.h */,
+				5479DB2020DE20010044DF1B /* FLPhotosListInteractorOutput.h */,
+				5479DB1C20DE1FA20044DF1B /* FLPhotosListInteractor.h */,
+				5479DB1D20DE1FA20044DF1B /* FLPhotosListInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5479DB2120DE33FC0044DF1B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5479DB2220DE34280044DF1B /* FLImageCollectionViewCell.h */,
+				5479DB2320DE34280044DF1B /* FLImageCollectionViewCell.m */,
+				5479DB2420DE34280044DF1B /* FLImageCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5479DB2A20DE59EA0044DF1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5479DB2720DE59E30044DF1B /* FlickrPhoto.h */,
+				5479DB2820DE59E30044DF1B /* FlickrPhoto.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5479DB2B20DE5C2F0044DF1B /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				5479DB2C20DE5C610044DF1B /* FlickrPhotoNetworkService.h */,
+				5479DB2D20DE5C610044DF1B /* FlickrPhotoNetworkService.m */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +313,7 @@
 			files = (
 				5422B03D20DD38D900DC56ED /* LaunchScreen.storyboard in Resources */,
 				5422B03A20DD38D900DC56ED /* Assets.xcassets in Resources */,
+				5479DB2620DE34280044DF1B /* FLImageCollectionViewCell.xib in Resources */,
 				5422B03820DD38D900DC56ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5422B03520DD38D900DC56ED /* ViewController.m in Sources */,
+				5479DB2520DE34280044DF1B /* FLImageCollectionViewCell.m in Sources */,
+				5422B05E20DE169600DC56ED /* RootRouter.m in Sources */,
+				5479DB1B20DE1F780044DF1B /* FLPhototsListPresenter.m in Sources */,
+				5479DB1E20DE1FA20044DF1B /* FLPhotosListInteractor.m in Sources */,
+				5479DB2E20DE5C610044DF1B /* FlickrPhotoNetworkService.m in Sources */,
+				5422B06C20DE196100DC56ED /* FLPhotosListBuilder.m in Sources */,
+				5422B06820DE18A500DC56ED /* FLPhotosListCollectionViewController.m in Sources */,
+				5479DB2920DE59E30044DF1B /* FlickrPhoto.m in Sources */,
 				5422B04020DD38D900DC56ED /* main.m in Sources */,
 				5422B03220DD38D900DC56ED /* AppDelegate.m in Sources */,
 			);
@@ -360,6 +494,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62JA8ZZURJ;
 				INFOPLIST_FILE = Flickr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Uber.Flickr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,6 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62JA8ZZURJ;
 				INFOPLIST_FILE = Flickr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Uber.Flickr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
