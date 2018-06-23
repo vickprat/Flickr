@@ -18,6 +18,7 @@ static NSUInteger const numberOfColumns = 3;
 @property (nonatomic) UIEdgeInsets sectionInsets;
 @property (nonatomic) UISearchBar *searchBar;
 @property (nonatomic) UIActivityIndicatorView *loadingSpinner;
+@property (nonatomic) BOOL isPreviousRequestCompleted;
 
 @end
 
@@ -60,6 +61,7 @@ static NSUInteger const numberOfColumns = 3;
 - (void)showPhotos {
   dispatch_async(dispatch_get_main_queue(), ^{
     [self.collectionView reloadData];
+    self.isPreviousRequestCompleted = YES;
   });
 }
 
@@ -142,8 +144,9 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section {
 #pragma mark <UIScrollViewDelegate>
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  if (self.collectionView.contentOffset.y + 300 > self.collectionView.contentSize.height - self.collectionView.frame.size.height) {
+  if ((self.collectionView.contentOffset.y > (self.collectionView.contentSize.height - 2*self.collectionView.frame.size.height)) && self.isPreviousRequestCompleted) {
     [self.output scrollWillEnd];
+    self.isPreviousRequestCompleted = NO;
   }
 }
 
