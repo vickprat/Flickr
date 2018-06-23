@@ -11,21 +11,27 @@
 #import "FlickrPhoto.h"
 #import "FLPhotosListInteractorOutput.h"
 
+@interface FLPhotosListInteractor()
+
+@property (nonatomic) FlickrPhotoNetworkService *photoNetworkService;
+
+@end
+
 @implementation FLPhotosListInteractor
 
 - (void)fetchPhotosWithSearchString:(NSString *)searchString
                          pageNumber:(NSUInteger)pageNumber {
-  FlickrPhotoNetworkService *service = [[FlickrPhotoNetworkService alloc] init];
-  [service fetchPhotosWithSearchString:searchString
-                            pageNumber:pageNumber
-                       completionBlock:^(NSDictionary *imageData) {
-                         NSDictionary *photosDictionary = imageData[@"photos"];
-                         NSMutableArray *photos = [[NSMutableArray alloc] init];
-                         for (NSDictionary *photoDictionary in photosDictionary[@"photo"]) {
-                           [photos addObject:[self flickrPhotoFromPhotoDictionary:photoDictionary]];
-                         }
-                         [self.output fetchedPhotos:photos];
-                       }];
+  self.photoNetworkService = [[FlickrPhotoNetworkService alloc] init];
+  [self.photoNetworkService fetchPhotosWithSearchString:searchString
+                                             pageNumber:pageNumber
+                                        completionBlock:^(NSDictionary *imageData) {
+                                          NSDictionary *photosDictionary = imageData[@"photos"];
+                                          NSMutableArray *photos = [[NSMutableArray alloc] init];
+                                          for (NSDictionary *photoDictionary in photosDictionary[@"photo"]) {
+                                            [photos addObject:[self flickrPhotoFromPhotoDictionary:photoDictionary]];
+                                          }
+                                          [self.output fetchedPhotos:photos];
+                                        }];
 }
 
 - (FlickrPhoto *)flickrPhotoFromPhotoDictionary:(NSDictionary *)photoDictionary {
@@ -36,7 +42,10 @@
 }
 
 - (NSURL *)downloadURLForFlickrPhoto:(FlickrPhoto *)flickrPhoto {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg", flickrPhoto.farm, flickrPhoto.server, flickrPhoto.ID, flickrPhoto.secret]];
+  return [self.photoNetworkService downloadURLWithFarm:flickrPhoto.farm
+                                                server:flickrPhoto.server
+                                                    ID:flickrPhoto.ID
+                                                secret:flickrPhoto.secret];
 }
 
 @end

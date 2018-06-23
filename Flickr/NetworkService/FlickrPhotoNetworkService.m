@@ -27,4 +27,11 @@
           }] resume];
 }
 
+- (NSURL *)downloadURLWithFarm:(NSString *)farm
+                        server:(NSString *)server
+                            ID:(NSString *)ID
+                        secret:(NSString *)secret {
+  return [NSURL URLWithString:[NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg", farm, server, ID, secret]];
+}
+
 @end
