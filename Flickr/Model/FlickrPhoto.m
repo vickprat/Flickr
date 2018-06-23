@@ -14,6 +14,10 @@
                     server:(NSString *)server
                       farm:(NSString *)farm
                     secret:(NSString *)secret {
+  NSParameterAssert(ID);
+  NSParameterAssert(server);
+  NSParameterAssert(farm);
+  NSParameterAssert(secret);
   self = [super init];
   if (self) {
     _ID = ID;
