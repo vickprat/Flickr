@@ -141,7 +141,7 @@ static CGFloat const SpaceBetweenTwoPhotos = 10.0;
 - (CGFloat)collectionView:(UICollectionView *)collectionView
                    layout:(UICollectionViewLayout *)collectionViewLayout
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-  return self.sectionInsets.left;
+  return SpaceBetweenTwoPhotos;
 }
 
 #pragma mark <UISearchBarDelegate>
