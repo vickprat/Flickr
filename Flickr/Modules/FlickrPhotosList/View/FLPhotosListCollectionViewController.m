@@ -11,6 +11,7 @@
 #import "FLImageCollectionViewCell.h"
 
 static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
+static NSUInteger const numberOfColumns = 3;
 
 @interface FLPhotosListCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UIScrollViewDelegate>
 
@@ -114,9 +115,9 @@ static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-  CGFloat paddingSpace = 4 * self.sectionInsets.left;
+  CGFloat paddingSpace = (numberOfColumns + 1) * self.sectionInsets.left;
   CGFloat availableWidth = collectionView.bounds.size.width - paddingSpace;
-  CGFloat widthPerItem = availableWidth / 3;
+  CGFloat widthPerItem = availableWidth / numberOfColumns;
   return CGSizeMake(widthPerItem, widthPerItem);
 }
 
