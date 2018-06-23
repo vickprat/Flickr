@@ -12,4 +12,8 @@
 
 - (void)showPhotos;
 
+- (void)showLoadingSpinner;
+
+- (void)hideLoadingSpinner;
+
 @end

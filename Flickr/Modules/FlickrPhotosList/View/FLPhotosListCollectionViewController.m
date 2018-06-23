@@ -16,6 +16,7 @@ static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
 
 @property (nonatomic) UIEdgeInsets sectionInsets;
 @property (nonatomic) UISearchBar *searchBar;
+@property (nonatomic) UIActivityIndicatorView *loadingSpinner;
 
 @end
 
@@ -25,6 +26,7 @@ static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
   [super viewDidLoad];
   [self setupCollectionView];
   [self setupSearchBar];
+  [self setupLoadingSpinner];
 }
 
 - (void)setupCollectionView {
@@ -41,6 +43,15 @@ static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
   [self.collectionView addSubview:self.searchBar];
 }
 
+- (void)setupLoadingSpinner {
+  self.loadingSpinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+  self.loadingSpinner.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+  self.loadingSpinner.center = self.view.center;
+  [self.collectionView addSubview:self.loadingSpinner];
+  [self.loadingSpinner bringSubviewToFront:self.collectionView];
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
 - (void)viewWillLayoutSubviews {
   self.searchBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.collectionView.frame), 44);
 }
@@ -48,6 +59,18 @@ static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
 - (void)showPhotos {
   dispatch_async(dispatch_get_main_queue(), ^{
     [self.collectionView reloadData];
+  });
+}
+
+- (void)showLoadingSpinner {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self.loadingSpinner startAnimating];
+  });
+}
+
+- (void)hideLoadingSpinner {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self.loadingSpinner stopAnimating];
   });
 }
 

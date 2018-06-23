@@ -28,6 +28,7 @@
     self.searchText = searchText;
     [self.interactor fetchPhotosWithSearchString:self.searchText
                                       pageNumber:self.pageNumber];
+    [self.view showLoadingSpinner];
   }
 }
 
@@ -36,6 +37,7 @@
     self.pageNumber++;
     [self.interactor fetchPhotosWithSearchString:self.searchText
                                       pageNumber:self.pageNumber];
+    [self.view showLoadingSpinner];
   }
 }
 
@@ -54,6 +56,7 @@
     self.photos = [[self.photos mutableCopy] arrayByAddingObjectsFromArray:photos];
   }
   [self.view showPhotos];
+  [self.view hideLoadingSpinner];
 }
 
 - (NSURL *)photoURLForRow:(NSUInteger)row {
