@@ -8,24 +8,45 @@
 
 #import <XCTest/XCTest.h>
 #import "FlickrPhotoNetworkService.h"
+#import "FlickrPhoto.h"
 
 @interface FlickrPhotoNetworkServiceTests : XCTestCase
+
+@property (nonatomic) FlickrPhotoNetworkService *photoNetworkService;
 
 @end
 
 @implementation FlickrPhotoNetworkServiceTests
 
-- (void)testMovieWebService {
-  FlickrPhotoNetworkService *photoNetworkService = [FlickrPhotoNetworkService new];
+- (void)setUp {
+  _photoNetworkService = [FlickrPhotoNetworkService new];
+}
+
+- (void)tearDown {
+  _photoNetworkService = nil;
+}
+
+- (void)testMovieWebServiceForPhotosData {
   XCTestExpectation *expectation = [self expectationWithDescription:@"Photo data not received"];
-  [photoNetworkService fetchPhotosWithSearchString:@"kittens"
-                                        pageNumber:1
-                                   completionBlock:^(NSDictionary *photoData) {
-    if (photoData != nil) {
-      [expectation fulfill];
-    }
-  }];
+  [self.photoNetworkService fetchPhotosWithSearchString:@"kittens"
+                                             pageNumber:1
+                                        completionBlock:^(NSDictionary *photosData) {
+                                          if (photosData != nil) {
+                                            [expectation fulfill];
+                                            [self verifyPhotosData:photosData];
+                                          }
+                                        }];
   [self waitForExpectationsWithTimeout:10 handler:nil];
+}
+
+- (void)verifyPhotosData:(NSDictionary *)photosData {
+  NSDictionary *photosDict = photosData[@"photos"];
+  for (NSDictionary *photoDict in photosDict[@"photo"]) {
+    XCTAssertNotNil(photoDict[@"server"]);
+    XCTAssertNotNil(photoDict[@"farm"]);
+    XCTAssertNotNil(photoDict[@"id"]);
+    XCTAssertNotNil(photoDict[@"secret"]);
+  }
 }
 
 @end
