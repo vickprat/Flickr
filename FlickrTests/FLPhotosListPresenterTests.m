@@ -10,6 +10,7 @@
 #import "FLPhotosListViewInput.h"
 #import "FLPhotosListInteractorInput.h"
 #import "FLPhotosListPresenter.h"
+#import "FlickrPhoto.h"
 
 @interface MockView : UIViewController <FLPhotosListViewInput>
 
@@ -100,7 +101,11 @@
 }
 
 - (void)testFetchedPhotos {
-  [self.presenter fetchedPhotos:@[]];
+  FlickrPhoto *photo = [[FlickrPhoto alloc] initWithID:@"random"
+                                                server:@"random"
+                                                  farm:@"random"
+                                                secret:@"random"];
+  [self.presenter fetchedPhotos:@[photo]];
   XCTAssertTrue(self.mockView.photosShown);
   XCTAssertFalse(self.mockView.showingLoadingSpinner);
 }
