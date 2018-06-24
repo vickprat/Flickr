@@ -28,6 +28,7 @@ static CGFloat const SpaceBetweenTwoPhotos = 10.0;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.isPreviousRequestCompleted = YES;
   [self setupCollectionView];
   [self setupSearchBar];
   [self setupLoadingSpinner];
