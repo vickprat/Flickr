@@ -100,7 +100,7 @@ static CGFloat const SpaceBetweenTwoPhotos = 10.0;
                                       if (image != nil) {
                                         dispatch_async(dispatch_get_main_queue(), ^{
                                           FLImageCollectionViewCell *cell = (FLImageCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-                                          if (cell) {
+                                          if (cell && [collectionView.indexPathsForVisibleItems containsObject:indexPath]) {
                                             cell.flickrImageView.image = image;
                                           }
                                         });
