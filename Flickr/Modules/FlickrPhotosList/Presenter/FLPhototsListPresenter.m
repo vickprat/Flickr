@@ -69,6 +69,9 @@
                        if (data != nil) {
                          UIImage *image = [UIImage imageWithData:data];
                          if (image != nil) {
+                           if (self.imageCache == nil) {
+                             self.imageCache = [NSCache new];
+                           }
                            [self.imageCache setObject:image forKey:flickrPhoto.ID];
                          }
                          completionBlock(image);
