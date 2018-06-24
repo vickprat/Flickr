@@ -92,7 +92,8 @@ static CGFloat const SpaceBetweenTwoPhotos = 10.0;
   return [self.output numberOfPhotos];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   FLImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
   cell.flickrImageView.image = [self.output imageForRow:indexPath.row
                                     withCompletionBlock:^(UIImage *image) {
