@@ -11,7 +11,7 @@
 
 @protocol FLPhotosListViewOutput;
 
-@interface FLPhotosListCollectionViewController : UICollectionViewController <FLPhotosListViewInput>
+@interface FLPhotosListCollectionViewController : UICollectionViewController <FLPhotosListViewInput, UISearchBarDelegate>
 
 @property (nonatomic, strong) id <FLPhotosListViewOutput> output;
 

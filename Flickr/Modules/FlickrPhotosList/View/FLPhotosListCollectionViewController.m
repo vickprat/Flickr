@@ -15,7 +15,7 @@ static NSUInteger const numberOfColumns = 3;
 static CGFloat const SearchBarHeight = 44.0;
 static CGFloat const SpaceBetweenTwoPhotos = 10.0;
 
-@interface FLPhotosListCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UIScrollViewDelegate>
+@interface FLPhotosListCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
 @property (nonatomic) UIEdgeInsets sectionInsets;
 @property (nonatomic) UISearchBar *searchBar;
