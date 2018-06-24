@@ -14,9 +14,10 @@
                          pageNumber:(NSUInteger)pageNumber
                     completionBlock:(void (^)(NSDictionary *imageData))completionBlock;
 
-- (NSURL *)downloadURLWithFarm:(NSString *)farm
-                        server:(NSString *)server
-                            ID:(NSString *)ID
-                        secret:(NSString *)secret;
+- (void)downloadPhotoWithFarm:(NSString *)farm
+                       server:(NSString *)server
+                           ID:(NSString *)ID
+                       secret:(NSString *)secret
+              completionBlock:(void(^)(NSData *data))completionBlock;
 
 @end

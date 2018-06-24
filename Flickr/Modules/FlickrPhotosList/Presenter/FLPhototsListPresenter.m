@@ -59,19 +59,28 @@
   [self.view hideLoadingSpinner];
 }
 
-- (NSURL *)photoURLForRow:(NSUInteger)row {
+- (UIImage *)imageForRow:(NSUInteger)row
+     withCompletionBlock:(void (^)(UIImage *))completionBlock {
   FlickrPhoto *flickrPhoto = self.photos[row];
-  return [self.interactor downloadURLForFlickrPhoto:flickrPhoto];
-}
-
-- (void)cacheImage:(UIImage *)image forRow:(NSUInteger)row {
-  FlickrPhoto *flickrPhoto = self.photos[row];
-  [self.imageCache setObject:image forKey:flickrPhoto.ID];
-}
-
-- (UIImage *)imageForRow:(NSUInteger)row {
-  FlickrPhoto *flickrPhoto = self.photos[row];
-  return [self.imageCache objectForKey:flickrPhoto.ID];
+  UIImage *image = [self.imageCache objectForKey:flickrPhoto.ID];
+  if (image == nil) {
+    [self.interactor downloadFlickrPhoto:flickrPhoto
+                     withCompletionBlock:^(NSData *data) {
+                       if (data != nil) {
+                         UIImage *image = [UIImage imageWithData:data];
+                         if (image != nil) {
+                           [self.imageCache setObject:image forKey:flickrPhoto.ID];
+                         }
+                         completionBlock(image);
+                       } else {
+                         completionBlock(nil);
+                       }
+                     }];
+    return nil;
+  } else {
+    completionBlock(nil);
+    return image;
+  }
 }
 
 @end

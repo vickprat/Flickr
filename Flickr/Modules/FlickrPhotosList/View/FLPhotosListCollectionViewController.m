@@ -93,31 +93,17 @@ static CGFloat const SpaceBetweenTwoPhotos = 10.0;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   FLImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-  UIImage *image = [self.output imageForRow:indexPath.row];
-  if (image != nil) {
-    cell.flickrImageView.image = image;
-  } else {
-    [[[NSURLSession sharedSession] downloadTaskWithURL:[self.output photoURLForRow:indexPath.row]
-                                     completionHandler:^(NSURL *location,
-                                                         NSURLResponse *response,
-                                                         NSError *error) {
-                                       NSData *data = [NSData dataWithContentsOfURL:location];
-                                       if (data != nil && error == nil) {
-                                         UIImage *image = [UIImage imageWithData:data];
-                                         if (image) {
-                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                             FLImageCollectionViewCell *cell = (FLImageCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-                                             if (cell) {
-                                               cell.flickrImageView.image = image;
-                                             }
-                                             [self.output cacheImage:image forRow:indexPath.row];
-                                           });
-                                         }
-                                       } else {
-                                         NSLog(@"Error in downloading the photo: %@", error);
-                                       }
-                                     }] resume];
-  }
+  cell.flickrImageView.image = [self.output imageForRow:indexPath.row
+                                    withCompletionBlock:^(UIImage *image) {
+                                      if (image != nil) {
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                          FLImageCollectionViewCell *cell = (FLImageCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+                                          if (cell) {
+                                            cell.flickrImageView.image = image;
+                                          }
+                                        });
+                                      }
+                                    }];
   return cell;
 }
 

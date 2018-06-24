@@ -27,11 +27,19 @@
           }] resume];
 }
 
-- (NSURL *)downloadURLWithFarm:(NSString *)farm
-                        server:(NSString *)server
-                            ID:(NSString *)ID
-                        secret:(NSString *)secret {
-  return [NSURL URLWithString:[NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg", farm, server, ID, secret]];
+- (void)downloadPhotoWithFarm:(NSString *)farm
+                       server:(NSString *)server
+                           ID:(NSString *)ID
+                       secret:(NSString *)secret
+              completionBlock:(void(^)(NSData *data))completionBlock {
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg", farm, server, ID, secret]];
+  [[[NSURLSession sharedSession] downloadTaskWithURL:url
+                                   completionHandler:^(NSURL *location,
+                                                       NSURLResponse *response,
+                                                       NSError *error) {
+                                     NSData *data = [NSData dataWithContentsOfURL:location];
+                                     completionBlock(data);
+                                   }] resume];
 }
 
 @end

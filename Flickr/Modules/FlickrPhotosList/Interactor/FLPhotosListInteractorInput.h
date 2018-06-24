@@ -15,6 +15,7 @@
 - (void)fetchPhotosWithSearchString:(NSString *)searchString
                          pageNumber:(NSUInteger)pageNumber;
 
-- (NSURL *)downloadURLForFlickrPhoto:(FlickrPhoto *)flickrPhoto;
+- (void)downloadFlickrPhoto:(FlickrPhoto *)flickrPhoto
+        withCompletionBlock:(void(^)(NSData *))completionBlock;
 
 @end

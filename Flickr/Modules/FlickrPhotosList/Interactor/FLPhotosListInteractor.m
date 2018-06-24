@@ -41,11 +41,15 @@
                                   secret:photoDictionary[@"secret"]];
 }
 
-- (NSURL *)downloadURLForFlickrPhoto:(FlickrPhoto *)flickrPhoto {
-  return [self.photoNetworkService downloadURLWithFarm:flickrPhoto.farm
-                                                server:flickrPhoto.server
-                                                    ID:flickrPhoto.ID
-                                                secret:flickrPhoto.secret];
+- (void)downloadFlickrPhoto:(FlickrPhoto *)flickrPhoto
+        withCompletionBlock:(void (^)(NSData *))completionBlock {
+  [self.photoNetworkService downloadPhotoWithFarm:flickrPhoto.farm
+                                           server:flickrPhoto.server
+                                               ID:flickrPhoto.ID
+                                           secret:flickrPhoto.secret
+                                  completionBlock:^(NSData *data) {
+                                    completionBlock(data);
+                                  }];
 }
 
 @end

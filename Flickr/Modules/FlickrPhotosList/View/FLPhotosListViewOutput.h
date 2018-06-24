@@ -17,10 +17,7 @@
 
 - (NSUInteger)numberOfPhotos;
 
-- (NSURL *)photoURLForRow:(NSUInteger)row;
-
-- (void)cacheImage:(UIImage *)image forRow:(NSUInteger)row;
-
-- (UIImage *)imageForRow:(NSUInteger)row;
+- (UIImage *)imageForRow:(NSUInteger)row
+     withCompletionBlock:(void(^)(UIImage *))completionBlock;
 
 @end
