@@ -12,6 +12,7 @@
 
 @interface MockViewControllerOutput : NSObject <FLPhotosListViewOutput>
 
+@property (nonatomic) BOOL searchButtonPressed;
 @property (nonatomic) BOOL scrollEnded;
 
 @end
@@ -19,6 +20,7 @@
 @implementation MockViewControllerOutput
 
 - (void)searchButtonPressedWithSearchText:(NSString *)searchText {
+  self.searchButtonPressed = YES;
 }
 
 - (void)scrollWillEnd {
@@ -70,6 +72,11 @@
 - (void)testScrollReachedToEnd {
   [self.controller scrollViewDidScroll:[UIScrollView new]];
   XCTAssertTrue(self.output.scrollEnded);
+}
+
+- (void)testSearchButtonClicked {
+  [self.controller searchBarSearchButtonClicked:[UISearchBar new]];
+  XCTAssertTrue(self.output.searchButtonPressed);
 }
 
 @end
