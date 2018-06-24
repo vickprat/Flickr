@@ -19,11 +19,13 @@
 @implementation FlickrPhotoNetworkServiceTests
 
 - (void)setUp {
+  [super setUp];
   _photoNetworkService = [FlickrPhotoNetworkService new];
 }
 
 - (void)tearDown {
   _photoNetworkService = nil;
+  [super tearDown];
 }
 
 - (void)testMovieWebServiceForPhotosData {
