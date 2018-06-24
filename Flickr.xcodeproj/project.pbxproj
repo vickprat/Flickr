@@ -23,6 +23,9 @@
 		5479DB2920DE59E30044DF1B /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5479DB2820DE59E30044DF1B /* FlickrPhoto.m */; };
 		5479DB2E20DE5C610044DF1B /* FlickrPhotoNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5479DB2D20DE5C610044DF1B /* FlickrPhotoNetworkService.m */; };
 		54A875D020DEA1DA005709D2 /* FLPhotosListBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A875CF20DEA1DA005709D2 /* FLPhotosListBuilderTests.m */; };
+		54A875D420DF8713005709D2 /* FLPhotosListViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A875D320DF8713005709D2 /* FLPhotosListViewControllerTests.m */; };
+		54A875D620DF910E005709D2 /* FLPhotosListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A875D520DF910E005709D2 /* FLPhotosListPresenterTests.m */; };
+		54A875D820DF979C005709D2 /* FLPhotosListInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A875D720DF979C005709D2 /* FLPhotosListInteractorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		5479DB2C20DE5C610044DF1B /* FlickrPhotoNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoNetworkService.h; sourceTree = "<group>"; };
 		5479DB2D20DE5C610044DF1B /* FlickrPhotoNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoNetworkService.m; sourceTree = "<group>"; };
 		54A875CF20DEA1DA005709D2 /* FLPhotosListBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhotosListBuilderTests.m; sourceTree = "<group>"; };
+		54A875D320DF8713005709D2 /* FLPhotosListViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhotosListViewControllerTests.m; sourceTree = "<group>"; };
+		54A875D520DF910E005709D2 /* FLPhotosListPresenterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhotosListPresenterTests.m; sourceTree = "<group>"; };
+		54A875D720DF979C005709D2 /* FLPhotosListInteractorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPhotosListInteractorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +133,10 @@
 		5422B04820DD38D900DC56ED /* FlickrTests */ = {
 			isa = PBXGroup;
 			children = (
-				54A875CE20DEA1B6005709D2 /* ModuleTests */,
+				54A875CF20DEA1DA005709D2 /* FLPhotosListBuilderTests.m */,
+				54A875D320DF8713005709D2 /* FLPhotosListViewControllerTests.m */,
+				54A875D520DF910E005709D2 /* FLPhotosListPresenterTests.m */,
+				54A875D720DF979C005709D2 /* FLPhotosListInteractorTests.m */,
 				5422B04920DD38D900DC56ED /* FlickrPhotoNetworkServiceTests.m */,
 				5422B04B20DD38D900DC56ED /* Info.plist */,
 			);
@@ -230,14 +239,6 @@
 				5479DB2D20DE5C610044DF1B /* FlickrPhotoNetworkService.m */,
 			);
 			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		54A875CE20DEA1B6005709D2 /* ModuleTests */ = {
-			isa = PBXGroup;
-			children = (
-				54A875CF20DEA1DA005709D2 /* FLPhotosListBuilderTests.m */,
-			);
-			path = ModuleTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,7 +362,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54A875D020DEA1DA005709D2 /* FLPhotosListBuilderTests.m in Sources */,
+				54A875D620DF910E005709D2 /* FLPhotosListPresenterTests.m in Sources */,
 				5422B04A20DD38D900DC56ED /* FlickrPhotoNetworkServiceTests.m in Sources */,
+				54A875D420DF8713005709D2 /* FLPhotosListViewControllerTests.m in Sources */,
+				54A875D820DF979C005709D2 /* FLPhotosListInteractorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
