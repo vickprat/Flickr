@@ -13,7 +13,7 @@
 static NSString * const reuseIdentifier = @"FLImageCollectionViewCell";
 static NSUInteger const numberOfColumns = 3;
 static CGFloat const SearchBarHeight = 44.0;
-static CGFloat const SpaceBetweenTwoPhotos = 10.0;
+static CGFloat const SpaceBetweenTwoPhotos = 20.0;
 
 @interface FLPhotosListCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
